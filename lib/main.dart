@@ -7,6 +7,6 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: FlutterLogo(style: FlutterLogoStyle.horizontal,));
+    return MaterialApp(home: Scaffold(body: Text("\n\n\n\nHello Flutter!")));
   }
 }
