@@ -9,8 +9,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.lightBlue,
         body: Center(
-          child: Text("Hello Flutter!"),
+          child: Text(
+            "0",
+            style: Theme.of(context).textTheme.headline4,
+            textScaleFactor: 4,
+          ),
         ),
       ),
     );
