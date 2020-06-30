@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -10,16 +8,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Flutter Demo",
       theme: ThemeData(primaryColor: Colors.red, primarySwatch: Colors.red),
-      home: MyHomePage(),
+      home: MyHomePage(title: "Flutter Try - Home Page"),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
+
+  final String title;
+
   @override
-  State<StatefulWidget> createState() {
-    return _MyHomePageState();
-  }
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -35,20 +35,15 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.limeAccent,
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        tooltip: "Increment",
-        onPressed: incrementCounter,
-      ),
       appBar: AppBar(
-        title: Text("Flutter Try - Home Page"),
+        title: Text(widget.title),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "You've pushed this button these many times:",
+              "You have pushed the button this many times:",
               style: TextStyle(fontSize: 16),
             ),
             Text(
@@ -58,6 +53,11 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        tooltip: "Increment",
+        onPressed: incrementCounter,
       ),
     );
   }
