@@ -9,16 +9,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Flutter Demo",
-      theme: ThemeData(primaryColor: Colors.red),
+      theme: ThemeData(primaryColor: Colors.red, primarySwatch: Colors.red),
       home: Scaffold(
         backgroundColor: Colors.limeAccent,
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: () => print("Fab pressed"),
+        ),
         appBar: AppBar(
           title: Text("Flutter Try - Home Page"),
-          leading: Icon(Icons.arrow_back),
-          actions: <Widget>[
-            Icon(Icons.add_circle),
-            Icon(Icons.remove_circle),
-          ],
         ),
         body: Center(
           child: Column(
