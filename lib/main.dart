@@ -18,18 +18,27 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return MyHomePageState();
+    return _MyHomePageState();
   }
 }
 
-class MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.limeAccent,
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () => print("Fab pressed"),
+        tooltip: "Increment",
+        onPressed: incrementCounter,
       ),
       appBar: AppBar(
         title: Text("Flutter Try - Home Page"),
@@ -40,10 +49,10 @@ class MyHomePageState extends State<MyHomePage> {
           children: [
             Text(
               "You've pushed this button these many times:",
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 16),
             ),
             Text(
-              "0",
+              "$_counter",
               style: Theme.of(context).textTheme.headline5,
               textScaleFactor: 3,
             ),
