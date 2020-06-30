@@ -2,4 +2,4 @@
 
 Replicating and studying the Flutter Sample Project:
 
-<img src="./demo/demo.gif" width="80%"> 
+<img src="./demo/demo.gif" width="400px"> 
