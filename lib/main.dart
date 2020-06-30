@@ -11,10 +11,21 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.lightBlue,
         body: Center(
-          child: Text(
-            "0",
-            style: Theme.of(context).textTheme.headline4,
-            textScaleFactor: 4,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "You've pushed this button these many times:",
+                style: TextStyle(
+                  fontSize: 18
+                ),
+              ),
+              Text(
+                "0",
+                style: Theme.of(context).textTheme.headline4,
+                textScaleFactor: 3,
+              ),
+            ],
           ),
         ),
       ),
